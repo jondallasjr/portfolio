@@ -62,7 +62,7 @@ const TABLE_ID = 'grid-ZKKcULTwR_';
 
 async function fetchProjects(): Promise<Project[]> {
   try {
-    const response = await fetch(`https://coda.io/apis/v1/docs/${DOC_ID}/tables/${TABLE_ID}/rows?valueFormat=simpleWithArrays`, {
+    const response = await fetch(`https://coda.io/apis/v1/docs/${DOC_ID}/tables/${TABLE_ID}/rows?valueFormat=rich`, {
       headers: {
         'Authorization': `Bearer ${CODA_API_TOKEN}`,
         'Content-Type': 'application/json',
