@@ -4,24 +4,27 @@ import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 
 // TypeScript interfaces for Coda API
+// Helper type for handling nullable string values
+type CodaValue = string | null | undefined;
+
 interface CodaRow {
   id: string;
   type: string;
   href: string;
   name: string;
   values: {
-    'c-ZJnRSHN57I': string; // Name
-    'c-XTBof-RnLk': { display: string }; // Type (relation)
-    'c-TYFrdpvKvq': string; // Summary/Overview
-    'c-qgddQJ2vl4': string; // Impact
-    'c-unM4iGWb1m': string; // Key Features
-    'c-UpecEZo58M': string[]; // Images
-    'c-oZ9MT4CMqI': string; // Live Site
-    'c-ftYEpVsCyh': string; // Code Samples
-    'c-WIAWKYBqCl': string; // Explainer Video
-    'c-EMTQtgeVuP': string[]; // Skills
-    'c-ZrGXoOyahn': string; // Date
-    'c-1sypaYxPdn': boolean; // Visible
+    'c-ZJnRSHN57I': CodaValue; // Name
+    'c-XTBof-RnLk': { display: string } | null; // Type (relation)
+    'c-TYFrdpvKvq': CodaValue; // Summary/Overview
+    'c-qgddQJ2vl4': CodaValue; // Impact
+    'c-unM4iGWb1m': CodaValue; // Key Features
+    'c-UpecEZo58M': string[] | null; // Images
+    'c-oZ9MT4CMqI': CodaValue; // Live Site
+    'c-ftYEpVsCyh': CodaValue; // Code Samples
+    'c-WIAWKYBqCl': CodaValue; // Explainer Video
+    'c-EMTQtgeVuP': string[] | null; // Skills
+    'c-ZrGXoOyahn': CodaValue; // Date
+    'c-1sypaYxPdn': boolean | null; // Visible
   };
 }
 
@@ -59,7 +62,7 @@ const TABLE_ID = 'grid-ZKKcULTwR_';
 
 async function fetchProjects(): Promise<Project[]> {
   try {
-    const response = await fetch(`https://coda.io/apis/v1/docs/${DOC_ID}/tables/${TABLE_ID}/rows`, {
+    const response = await fetch(`https://coda.io/apis/v1/docs/${DOC_ID}/tables/${TABLE_ID}/rows?valueFormat=simpleWithArrays`, {
       headers: {
         'Authorization': `Bearer ${CODA_API_TOKEN}`,
         'Content-Type': 'application/json',
@@ -74,20 +77,27 @@ async function fetchProjects(): Promise<Project[]> {
     
     return data.items
       .filter(item => item.values['c-1sypaYxPdn'] === true) // Only visible projects
-      .map(item => ({
-        title: item.values['c-ZJnRSHN57I'] || '',
-        type: item.values['c-XTBof-RnLk']?.display || '', // Handle relation field
-        summary: item.values['c-TYFrdpvKvq'] || '',
-        impact: item.values['c-qgddQJ2vl4'] || '',
-        keyFeatures: item.values['c-unM4iGWb1m']?.split('\n').filter(Boolean) || [],
-        imageUrls: item.values['c-UpecEZo58M'] || [],
-        liveSiteUrl: item.values['c-oZ9MT4CMqI'] || '',
-        codeSamples: item.values['c-ftYEpVsCyh'] || '',
-        explainerVideo: item.values['c-WIAWKYBqCl'] || '',
-        technologies: item.values['c-EMTQtgeVuP'] || [],
-        date: item.values['c-ZrGXoOyahn'] || '',
-        visible: item.values['c-1sypaYxPdn'] || false
-      }));
+      .map(item => {
+        // With simpleWithArrays format, we should get an array directly
+        const technologies = Array.isArray(item.values['c-EMTQtgeVuP']) 
+          ? item.values['c-EMTQtgeVuP']
+          : [];
+
+        return {
+          title: item.values['c-ZJnRSHN57I']?.toString() || '',
+          type: item.values['c-XTBof-RnLk']?.display || '', // Handle relation field
+          summary: item.values['c-TYFrdpvKvq']?.toString() || '',
+          impact: item.values['c-qgddQJ2vl4']?.toString() || '',
+          keyFeatures: (item.values['c-unM4iGWb1m']?.toString() || '').split('\n').filter(Boolean),
+          imageUrls: item.values['c-UpecEZo58M'] || [],
+          liveSiteUrl: item.values['c-oZ9MT4CMqI']?.toString() || '',
+          codeSamples: item.values['c-ftYEpVsCyh']?.toString() || '',
+          explainerVideo: item.values['c-WIAWKYBqCl']?.toString() || '',
+          technologies: technologies,
+          date: item.values['c-ZrGXoOyahn']?.toString() || '',
+          visible: item.values['c-1sypaYxPdn'] || false
+        };
+      });
   } catch (error) {
     console.error('Error fetching projects:', error);
     return [];
