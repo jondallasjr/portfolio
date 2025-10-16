@@ -1,0 +1,613 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Workshops & Speaking</title><style>/* Jon Dallas - AI Solutions Architect - Page CSS */
+
+/* Global Styles */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1e40af;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #2563eb;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: #1e40af;
+}
+
+/* Layout Containers */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Header (Global Navigation) */
+header {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: white;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  padding: 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+}
+
+.breadcrumb a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons - Global Styles */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+  background: white;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.btn-secondary:hover {
+  background: #eff6ff;
+  transform: translateY(-1px);
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #2563eb;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+blockquote em {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+/* Utility Classes */
+.lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Responsive Grid */
+@media (max-width: 968px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  section {
+    padding: 2rem 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Form Elements (for contact page) */
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* Spacing Utilities */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* Print Styles */
+@media print {
+  header {
+    background: #1e40af;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .breadcrumb {
+    display: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8rem;
+    color: #6b7280;
+  }
+}
+
+
+
+/* Home Page Specific Styles Only */
+
+.tagline {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.25rem;
+  opacity: 0.95;
+}
+
+.hero {
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.hero h2 {
+  color: #1e40af;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-group {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.highlights {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 3rem;
+  color: #2563eb;
+  margin: 0;
+}
+
+.stat p {
+  color: #6b7280;
+  margin: 0.5rem 0 0 0;
+}
+
+.intro {
+  margin-top: 2rem;
+}
+
+.services-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+  color: #1e40af;
+  margin-top: 0;
+}
+
+.service-card a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.service-card a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Workshops & Speaking - Page CSS */
+
+.workshop-intro {
+
+  background: white;
+
+  padding: 2rem;
+
+  border-radius: 8px;
+
+  margin-bottom: 2rem;
+
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+}
+
+.credentials-banner {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 1.5rem;
+
+  margin-bottom: 3rem;
+
+}
+
+.cred-item {
+
+  background: #eff6ff;
+
+  padding: 1.5rem;
+
+  border-radius: 8px;
+
+  text-align: center;
+
+}
+
+.cred-item h3 {
+
+  color: #1e40af;
+
+  margin: 0 0 0.5rem 0;
+
+}
+
+.cred-item p {
+
+  color: #6b7280;
+
+  margin: 0;
+
+  font-size: 0.875rem;
+
+}
+
+.workshop-types {
+
+  margin-bottom: 3rem;
+
+}
+
+.workshop-card {
+
+  background: white;
+
+  padding: 2rem;
+
+  border-radius: 8px;
+
+  margin-bottom: 1.5rem;
+
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+}
+
+.workshop-card h3 {
+
+  color: #1e40af;
+
+  margin-top: 0;
+
+}
+
+.testimonials {
+
+  background: white;
+
+  padding: 2rem;
+
+  border-radius: 8px;
+
+  margin-bottom: 2rem;
+
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+}
+
+.cta-section {
+
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+
+  color: white;
+
+  padding: 3rem;
+
+  border-radius: 8px;
+
+  text-align: center;
+
+}</style></head><body><nav class="breadcrumb">
+
+<a href="/portfolio/">Home</a> / Workshops
+
+</nav>
+
+<section>
+
+<h1>Workshops & Speaking</h1>
+
+<div class="workshop-intro">
+
+<p class="lead">I've facilitated over 250 workshops for 8,000+ participants across 9 countries. My approach combines interactive exercises, games, and discussion to create learning experiences that actually stick.</p>
+
+</div>
+
+<div class="credentials-banner">
+
+<div class="cred-item">
+
+<h3>🎤 TEDx Speaker</h3>
+
+<p>"Why We Play Games" - April 2017, Hanoi</p>
+
+</div>
+
+<div class="cred-item">
+
+<h3>🌍 International Experience</h3>
+
+<p>Vietnam, Thailand, Czech Republic, Zimbabwe, USA</p>
+
+</div>
+
+<div class="cred-item">
+
+<h3>📊 Proven Track Record</h3>
+
+<p>250+ workshops, consistently excellent reviews</p>
+
+</div>
+
+</div>
+
+<div class="workshop-types">
+
+<h2>Workshop Topics</h2>
+
+<div class="workshop-card">
+
+<h3>AI Implementation Strategy</h3>
+
+<p>Help your team understand where AI adds value and where it doesn't. Interactive exercises reveal opportunities and risks specific to your industry.</p>
+
+<ul>
+
+<li>Identifying automation opportunities</li>
+
+<li>Maintaining human oversight</li>
+
+<li>Ethical considerations</li>
+
+<li>Change management</li>
+
+</ul>
+
+</div>
+
+<div class="workshop-card">
+
+<h3>Team Dynamics & Collaboration</h3>
+
+<p>Drawing from my experience founding Opening Up (8,000+ community events), I facilitate conversations that build trust and alignment.</p>
+
+<ul>
+
+<li>Productive conflict resolution</li>
+
+<li>Psychological safety</li>
+
+<li>Decision-making frameworks</li>
+
+<li>Cross-functional collaboration</li>
+
+</ul>
+
+</div>
+
+<div class="workshop-card">
+
+<h3>Creative Problem-Solving</h3>
+
+<p>Using games, exercises, and facilitated discussion to unlock creative thinking and break through stuck patterns.</p>
+
+<ul>
+
+<li>Design thinking methods</li>
+
+<li>Lateral thinking exercises</li>
+
+<li>Rapid prototyping</li>
+
+<li>Group ideation techniques</li>
+
+</ul>
+
+</div>
+
+<div class="workshop-card">
+
+<h3>Custom Topics</h3>
+
+<p>I've led workshops on philosophy, yoga, meditation, technology ethics, and more. Let's design something specific to your needs.</p>
+
+</div>
+
+</div>
+
+<div class="testimonials">
+
+<h2>What Participants Say</h2>
+
+<blockquote>"Very well prepared with fantastic presentations."</blockquote>
+
+<blockquote>"John is very knowledgeable, encouraging, and enthusiastic."<br><em>— Tyler</em></blockquote>
+
+<blockquote>"John does an excellent job making people feel welcome, connected, and at ease."<br><em>— Haley</em></blockquote>
+
+</div>
+
+<div class="cta-section">
+
+<h2>Ready to Create Something Together?</h2>
+
+<p>Whether you need a one-off workshop or a custom training series, let's talk about what would serve your team best.</p>
+
+<a href="/portfolio/contact" class="btn-primary">Schedule Consultation</a>
+
+</div>
+
+</section></body></html>
