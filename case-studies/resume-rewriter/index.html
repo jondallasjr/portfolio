@@ -534,124 +534,276 @@ article {
 
   margin: 0;
 
-}</style></head><body><nav class="breadcrumb">
+}</style></head><body><nav class='breadcrumb'>
 
-<a href="/portfolio/">Home</a> / <a href="/portfolio/case-studies">Case Studies</a> / Resume Rewriter
+<a href='/'>Home</a> / <a href='/case-studies'>Case Studies</a> / Resume Rewriter
 
 </nav>
 
+
+
 <article>
 
-<header class="case-header">
+  <header class='case-header'>
 
-<h1>Resume Rewriter for Career Platform</h1>
+    <h1>Resume Rewriter for Career Platform</h1>
 
-<div class="case-meta">
+    <div class='case-meta'>
 
-<span>Client: Career Coaching Platform</span>
+      <span class='pill'>Client: Career Coaching Platform</span>
 
-<span>Platform: Coda.io with AI APIs</span>
+      <span class='pill'>Platform: Coda.io with AI APIs</span>
 
-<span>Duration: 3 months</span>
+      <span class='pill'>Duration: 3 months</span>
 
-</div>
+    </div>
 
-</header>
+  </header>
 
-<section class="challenge">
 
-<h2>The Challenge</h2>
 
-<p>A career platform was spending <strong>$240 per resume rewrite</strong> using human writers. With growing demand, this wasn't sustainable. But they couldn't compromise on quality—resumes needed to be accurate, tailored, and compelling.</p>
+  <section class='challenge'>
 
-</section>
+    <h2>The Challenge</h2>
 
-<section class="solution">
+    <p>A career platform was spending <strong>$240 per resume rewrite</strong> using human writers. With growing demand, this wasn't sustainable. But they couldn't compromise on quality—resumes needed to be accurate, tailored, and compelling.</p>
 
-<h2>The Solution</h2>
+    <details class='accordion mt-2'>
 
-<p>I built an AI-powered system in Coda.io that automates the research and drafting while keeping humans in the loop for quality control.</p>
+      <summary>Scope details</summary>
 
-<h3>The Workflow</h3>
+      <ul class='mt-2'>
 
-<ol>
+        <li>Volume target: 200–400 rewrites/month</li>
 
-<li><strong>Parse Resume:</strong> Extract structured data from uploaded resume</li>
+        <li>Quality bar: ATS-friendly, quantified impact, role-tailored</li>
 
-<li><strong>Find LinkedIn:</strong> AI identifies and scrapes candidate's LinkedIn profile</li>
+        <li>Constraints: keep human oversight; reduce cycle time</li>
 
-<li><strong>Determine Target Job:</strong> Analyze resume + LinkedIn to identify career goals</li>
+      </ul>
 
-<li><strong>Research Live Postings:</strong> Google search for relevant job listings</li>
+    </details>
 
-<li><strong>Keyword Analysis:</strong> Identify which keywords, metrics, and achievements matter most</li>
+  </section>
 
-<li><strong>Gap Analysis:</strong> Find what's missing from the current resume</li>
 
-<li><strong>Follow-Up Questions:</strong> Generate email with specific questions for client</li>
 
-<li><strong>Apply Writing Guidelines:</strong> Determine appropriate style and tone</li>
+  <section class='solution'>
 
-<li><strong>Rewrite Resume:</strong> AI generates new version</li>
+    <h2>The Solution</h2>
 
-<li><strong>Quality Assurance:</strong> AI checks thoroughness, accuracy, and factual claims</li>
+    <p>I built an AI-powered system in Coda.io that automates the research and drafting while keeping humans in the loop for quality control.</p>
 
-<li><strong>Human Review:</strong> Career coach reviews and finalizes (this is critical!)</li>
 
-</ol>
 
-</section>
+    <h3>The Workflow</h3>
 
-<section class="results">
+    <details class='accordion' id='workflow'>
 
-<h2>The Results</h2>
+      <summary>View 11-step workflow</summary>
 
-<div class="results-grid">
+      <ol class='step-list mt-2'>
 
-<div class="result">
+        <li><strong>Parse Resume:</strong> Extract structured data from uploaded resume</li>
 
-<h3>87% Cost Reduction</h3>
+        <li><strong>Find LinkedIn:</strong> AI identifies and scrapes candidate's LinkedIn profile</li>
 
-<p>From $240 to $30 per resume</p>
+        <li><strong>Determine Target Job:</strong> Analyze resume + LinkedIn to identify career goals</li>
 
-</div>
+        <li><strong>Research Live Postings:</strong> Google search for relevant job listings</li>
 
-<div class="result">
+        <li><strong>Keyword Analysis:</strong> Identify which keywords, metrics, and achievements matter most</li>
 
-<h3>Human Touch Maintained</h3>
+        <li><strong>Gap Analysis:</strong> Find what's missing from the current resume</li>
 
-<p>Final review ensures quality and accuracy</p>
+        <li><strong>Follow-Up Questions:</strong> Generate email with specific questions for client</li>
 
-</div>
+        <li><strong>Apply Writing Guidelines:</strong> Determine appropriate style and tone</li>
 
-<div class="result">
+        <li><strong>Rewrite Resume:</strong> AI generates new version</li>
 
-<h3>15% Conversion</h3>
+        <li><strong>Quality Assurance:</strong> AI checks thoroughness, accuracy, and factual claims</li>
 
-<p>Free version drives paid upgrades</p>
+        <li><strong>Human Review:</strong> Career coach reviews and finalizes (this is critical!)</li>
 
-</div>
+      </ol>
 
-</div>
+    </details>
 
-</section>
 
-<section class="lessons">
 
-<h2>Key Insights</h2>
+    <details class='accordion mt-2'>
 
-<ul>
+      <summary>Sample follow-up email</summary>
 
-<li><strong>AI makes mistakes:</strong> That's why we built QA into the system itself before human review</li>
+      <pre class='code-block mt-2' id='email-template'>Hi {FirstName},
 
-<li><strong>Factual accuracy matters:</strong> We verify all claims against source documents</li>
 
-<li><strong>Human oversight is non-negotiable:</strong> Especially for high-stakes content like resumes</li>
 
-<li><strong>Multi-step processes work:</strong> Breaking the task into stages improves quality</li>
+To tailor your resume to {TargetRole}, could you confirm:
 
-</ul>
+• Your top 3 achievements at {Company} with metrics (%, $, time saved).
 
-</section>
+• Tools you used daily (versions/certifications if any).
 
-</article></body></html>
+• Team size and your specific responsibilities.
+
+• Any awards, promotions, or leadership contributions.
+
+
+
+Thanks!
+
+—Your Coach</pre>
+
+      <button class='btn-secondary mt-2' id='copy-email'>Copy email</button>
+
+    </details>
+
+  </section>
+
+
+
+  <section class='results'>
+
+    <h2>The Results</h2>
+
+    <div class='results-grid'>
+
+      <div class='result'>
+
+        <h3>87% Cost Reduction</h3>
+
+        <p>From $240 to $30 per resume</p>
+
+        <details class='accordion compact'>
+
+          <summary>See cost math</summary>
+
+          <ul class='mt-1 small'>
+
+            <li>AI + Infra: $8</li>
+
+            <li>QA pass: $7</li>
+
+            <li>Coach review: $15</li>
+
+            <li><strong>Total: $30</strong></li>
+
+          </ul>
+
+        </details>
+
+      </div>
+
+      <div class='result'>
+
+        <h3>Human Touch Maintained</h3>
+
+        <p>Final review ensures quality and accuracy</p>
+
+      </div>
+
+      <div class='result'>
+
+        <h3>15% Conversion</h3>
+
+        <p>Free version drives paid upgrades</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class='lessons'>
+
+    <h2>Key Insights</h2>
+
+    <ul>
+
+      <li><strong>AI makes mistakes:</strong> That's why we built QA into the system itself before human review</li>
+
+      <li><strong>Factual accuracy matters:</strong> We verify all claims against source documents</li>
+
+      <li><strong>Human oversight is non-negotiable:</strong> Especially for high-stakes content like resumes</li>
+
+      <li><strong>Multi-step processes work:</strong> Breaking the task into stages improves quality</li>
+
+    </ul>
+
+
+
+    <details class='accordion mt-2'>
+
+      <summary>Coach QA checklist</summary>
+
+      <ul id='qa-checklist' class='mt-2'>
+
+        <li>Impact metrics added for each role</li>
+
+        <li>Skills aligned to target JD keywords</li>
+
+        <li>Dates/companies verified against sources</li>
+
+        <li>Formatting ATS-safe (no tables/graphics)</li>
+
+        <li>Claims free of unverifiable boasts</li>
+
+      </ul>
+
+      <button class='btn-secondary mt-2' id='copy-qa'>Copy checklist</button>
+
+    </details>
+
+  </section>
+
+</article>
+
+
+
+<script>
+
+(function(){
+
+  function copyText(id){
+
+    const el = document.getElementById(id);
+
+    const text = el.tagName === 'UL' ? Array.from(el.querySelectorAll('li')).map(li=>' - ' + li.textContent.trim()).join('\n') : el.textContent;
+
+    if (navigator.clipboard){
+
+      navigator.clipboard.writeText(text).then(()=>{
+
+        const btn = document.activeElement;
+
+        if(btn){
+
+          const original = btn.textContent;
+
+          btn.textContent = 'Copied!';
+
+          setTimeout(()=> btn.textContent = original, 1200);
+
+        }
+
+      });
+
+    }
+
+  }
+
+  const emailBtn = document.getElementById('copy-email');
+
+  if(emailBtn){ emailBtn.addEventListener('click', ()=>copyText('email-template')); }
+
+  const qaBtn = document.getElementById('copy-qa');
+
+  if(qaBtn){ qaBtn.addEventListener('click', ()=>copyText('qa-checklist')); }
+
+})();
+
+</script></body></html>
